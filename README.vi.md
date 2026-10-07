@@ -68,7 +68,7 @@ Ngoài app, bạn cần:
 
 ### Bước 3 - Đăng nhập &amp; mua gói
 
-**Cần tài khoản G-Labs có gói Flow Music Automation còn hạn, không có bản miễn phí.** Mở app, đăng nhập bằng Google; chưa có gói thì app mở màn hình mua gói. Gói là gói riêng, tách khỏi các gói của G-Labs Studio, tính theo thời hạn và không tự gia hạn:
+**Cần tài khoản có gói Flow Music Automation còn hạn, không có bản miễn phí.** Mở app, đăng nhập bằng Google; chưa có gói thì app mở màn hình mua gói. Gói là gói riêng, tách khỏi các gói của G-Labs Studio, tính theo thời hạn và không tự gia hạn:
 
 | Thời hạn | Chuyển khoản QR (VietQR) | PayPal / USDT |
 |---|---|---|

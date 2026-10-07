@@ -68,7 +68,7 @@ Besides the app, you need:
 
 ### Step 3 - Sign in &amp; get a plan
 
-**You need a G-Labs account with an active Flow Music Automation plan. There is no free tier.** Open the app and sign in with Google; without a plan, the app shows the purchase screen. The plan is separate from the G-Labs Studio plans, is time-based and never auto-renews:
+**You need an account with an active Flow Music Automation plan. There is no free tier.** Open the app and sign in with Google; without a plan, the app shows the purchase screen. The plan is separate from the G-Labs Studio plans, is time-based and never auto-renews:
 
 | Duration | Bank QR (VietQR) | PayPal / USDT |
 |---|---|---|
