@@ -106,6 +106,7 @@ App **tự cập nhật**: viên phiên bản trên thanh tiêu đề kiểm tra
 - **Theo dõi kết quả**: kiểu Gọn / Chi tiết, lọc Đang chạy / Xong / Lỗi, tìm theo prompt hay tên bài, nghe thử ngay trong app, thử lại bài lỗi bằng một nút. Danh sách hàng nghìn bài vẫn mượt.
 - **Báo khi xong**: thông báo hệ thống (kèm nháy taskbar trên Windows) khi cả hàng chờ chạy xong.
 - **Quản lý tài khoản**: credit từng tài khoản, gói, proxy riêng, bật / tắt, đăng nhập lại tài khoản hết phiên, mở hồ sơ Chrome của tài khoản. Email được che một phần (bấm con mắt để xem).
+- **Webhook API**: máy chủ REST cục bộ có cổng và khoá API riêng, để n8n, Make.com, script của bạn hay AI agent xếp bài vào hàng chờ và tải kết quả về. Tài liệu đầy đủ: [`WEBHOOK_INTEGRATION.vi.md`](WEBHOOK_INTEGRATION.vi.md).
 - **6 ngôn ngữ**: English · Tiếng Việt · 简体中文 · Español · Русский · العربية (viết phải→trái); giao diện sáng / tối.
 
 ---
@@ -151,6 +152,16 @@ Danh sách tài khoản Flow Music với credit, gói, proxy và lần làm mớ
 
 Proxy nhận dạng `host:port`, `user:pass@host:port`, `host:port:user:pass` hoặc `http://` / `socks5://…`.
 
+### 🌐 Webhook API
+
+Biến app thành máy chủ tự động hoá cục bộ. Tab có ba khối giống G-Labs Studio:
+
+- **Điều khiển Server**: IP (`127.0.0.1` = chỉ máy này, `0.0.0.0` hoặc IP LAN = máy khác trong mạng gọi được), cổng (mặc định `8799`), URL kèm nút sao chép, **Khởi động** / **Dừng Server**, và **Tự động khởi động server khi mở app**.
+- **Khóa API**: gửi kèm header `X-API-Key`. **Tạo** đổi khoá mới (khoá cũ hết tác dụng ngay), **Sao chép** để chép khoá.
+- **Lưu trữ kết quả**: nhạc tạo qua webhook lưu ở thư mục riêng (`<thư mục lưu>/music`), có dung lượng đang dùng, tự xoá file cũ hơn 1 / 3 / 7 / 14 / 30 ngày và nút **Dọn dẹp** chỉ đụng tới thư mục con đó.
+
+Gửi POST một prompt tới `/api/music/generate`, hỏi `/api/status/<task_id>` tới khi `completed`, rồi tải 2 bản từ các link trả về. Khối **Hướng dẫn sử dụng** có nút **Mở tài liệu webhook** để gửi cho AI agent; lược đồ đầy đủ ở [`WEBHOOK_INTEGRATION.vi.md`](WEBHOOK_INTEGRATION.vi.md) ([English](WEBHOOK_INTEGRATION.en.md)).
+
 ### ⚙️ Cài đặt
 
 ![Cài đặt](docs/screenshots/05-settings.png)
@@ -162,6 +173,8 @@ Ngôn ngữ, giao diện sáng / tối, thư mục lưu mặc định và địn
 | **M4A** | `.m4a` | Bản AAC gốc Flow Music trả về, nhẹ (~3 MB/bài) |
 | **MP3** | `.mp3` | Mã hoá trên máy từ bản WAV gốc, 128 / 192 / 256 / 320 kbps; mở được ở mọi phần mềm |
 | **WAV** | `.wav` | Bản không nén gốc, chất lượng cao nhất (~30 MB/bài) |
+
+**Lưu trữ kết quả** cho biết nhạc đang chiếm bao nhiêu dung lượng, có thể tự xoá bài cũ hơn N ngày, nút **Dọn dẹp** (chỉ xoá file app đã tạo: thư mục task đặt tên theo ngày giờ và các bài trong lịch sử) và **Xoá cache profile** cho các profile Chrome của tài khoản (không mất đăng nhập).
 
 Bên dưới là thông tin bản quyền: tài khoản, mã khách hàng, ngày hết hạn.
 
@@ -178,7 +191,8 @@ Bên dưới là thông tin bản quyền: tài khoản, mã khách hàng, ngày
 | Thứ gì | Windows | macOS |
 |---|---|---|
 | Nhạc tạo ra (đổi được trong Cài đặt / trang Tạo nhạc) | `%USERPROFILE%\Music\Flow Music Automation` | `~/Music/Flow Music Automation` |
-| Cài đặt, tài khoản Flow Music, hàng chờ, lịch sử | `%USERPROFILE%\.flowmusic-forge` | `~/.flowmusic-forge` |
+| Kết quả Webhook API (đổi được ở tab Webhook API) | `%USERPROFILE%\Music\Flow Music Automation\webhook\music` | `~/Music/Flow Music Automation/webhook/music` |
+| Cài đặt, tài khoản Flow Music, hàng chờ, lịch sử, khoá webhook | `%USERPROFILE%\.flowmusic-forge` | `~/.flowmusic-forge` |
 
 Tài khoản Flow Music và hàng chờ chỉ nằm trên máy bạn. Máy chủ bản quyền chỉ dùng để kiểm tra gói, xem [Chính sách quyền riêng tư](https://duckspace.net/privacy.html).
 

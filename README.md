@@ -106,6 +106,7 @@ The app **updates itself**: the version badge in the title bar checks GitHub Rel
 - **Follow the results**: Compact / Detailed views, Active / Done / Failed filters, search by prompt or title, listen inside the app, retry every failed song with one button. Lists of thousands of songs stay smooth.
 - **Know when it's done**: a system notification (plus a flashing taskbar button on Windows) when the whole queue finishes.
 - **Account manager**: credits, tier, per-account proxy, on/off switch, sign in again when a session expires, open the account's Chrome profile. Emails are partly hidden (click the eye to show them).
+- **Webhook API**: a local REST server with its own port and API key, so n8n, Make.com, your own scripts or an AI agent can queue songs and download the results. Full reference: [`WEBHOOK_INTEGRATION.en.md`](WEBHOOK_INTEGRATION.en.md).
 - **6 languages**: English · Tiếng Việt · 简体中文 · Español · Русский · العربية (right-to-left); light and dark themes.
 
 ---
@@ -151,6 +152,16 @@ Your Flow Music accounts with credits, tier, proxy and last refresh. Opening the
 
 Proxies can be `host:port`, `user:pass@host:port`, `host:port:user:pass` or `http://` / `socks5://…`.
 
+### 🌐 Webhook API
+
+Turn the app into a local automation server. The tab has three blocks, the same as G-Labs Studio:
+
+- **Server Control**: IP (`127.0.0.1` = this computer only, `0.0.0.0` or a LAN IP = other machines on your network), port (default `8799`), URL with a copy button, **Start Server** / **Stop Server**, and **Auto-start server when app launches**.
+- **API Key**: send it as the `X-API-Key` header. **Generate** makes a new key (the old one stops working at once), **Copy** copies it.
+- **Result storage**: webhook songs are saved in their own folder (`<save folder>/music`), with disk usage, auto-delete for files older than 1 / 3 / 7 / 14 / 30 days and a **Clean up** button that only touches that subfolder.
+
+POST a prompt to `/api/music/generate`, poll `/api/status/<task_id>` until it is `completed`, then download the 2 takes from the returned links. The **Quick Start Guide** block has an **Open the webhook documentation** button for AI agents; the full schema is in [`WEBHOOK_INTEGRATION.en.md`](WEBHOOK_INTEGRATION.en.md) ([Tiếng Việt](WEBHOOK_INTEGRATION.vi.md)).
+
 ### ⚙️ Settings
 
 ![Settings](docs/screenshots/05-settings.png)
@@ -162,6 +173,8 @@ Language, light / dark theme, default save folder and download format:
 | **M4A** | `.m4a` | The original AAC file from Flow Music, small (~3 MB per song) |
 | **MP3** | `.mp3` | Encoded on your computer from the original WAV, 128 / 192 / 256 / 320 kbps; plays everywhere |
 | **WAV** | `.wav` | The original lossless file, best quality (~30 MB per song) |
+
+**Result storage** shows how much space the songs take, can auto-delete songs older than N days, has a **Clean up** button (only files the app created: date-named task folders and songs in the history) and **Clear profile cache** for the Chrome profiles of your accounts (you stay signed in).
 
 Below that is your licence: account, customer ID and expiry date.
 
@@ -178,7 +191,8 @@ Below that is your licence: account, customer ID and expiry date.
 | What | Windows | macOS |
 |---|---|---|
 | Songs (change it in Settings or on the Create tab) | `%USERPROFILE%\Music\Flow Music Automation` | `~/Music/Flow Music Automation` |
-| Settings, Flow Music accounts, queue, history | `%USERPROFILE%\.flowmusic-forge` | `~/.flowmusic-forge` |
+| Webhook API results (change it on the Webhook API tab) | `%USERPROFILE%\Music\Flow Music Automation\webhook\music` | `~/Music/Flow Music Automation/webhook/music` |
+| Settings, Flow Music accounts, queue, history, webhook key | `%USERPROFILE%\.flowmusic-forge` | `~/.flowmusic-forge` |
 
 Your Flow Music accounts and queue stay on your computer. The licence server is only used to check your plan; see the [Privacy Policy](https://duckspace.net/privacy.html).
 
