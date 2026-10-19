@@ -21,7 +21,7 @@
 
 ### Bước 1 - Chọn đúng bản cho máy của bạn
 
-Mở bản phát hành mới nhất ở **[Releases](https://github.com/duckmartians/Flow-Music-Automation/releases/latest)** rồi tải tệp đúng với máy (`<phiên bản>` là số phiên bản, ví dụ `1.0.0`):
+Mở bản phát hành mới nhất ở **[Releases](https://github.com/duckmartians/Flow-Music-Automation/releases/latest)** rồi tải tệp đúng với máy (`<phiên bản>` là số phiên bản, ví dụ `1.0.1`):
 
 | Máy của bạn | Tải tệp | Ghi chú |
 |---|---|---|
@@ -49,7 +49,7 @@ Ngoài app, bạn cần:
 
 1. Mở tệp **`FlowMusicAutomation-<phiên bản>-win-x64.exe`** vừa tải.
 2. Nếu hiện bảng **"Windows protected your PC"** (SmartScreen): bấm **More info** → **Run anyway**. *(App chưa ký chứng chỉ của Microsoft nên bị cảnh báo, không phải virus.)*
-3. Chọn thư mục cài, chờ cài xong rồi mở **Flow Music Automation** từ **Start Menu**.
+3. Bộ cài tự chạy (không cần quyền admin, không phải chọn thư mục) và tự mở app khi cài xong. Lần sau mở **Flow Music Automation** từ **Start Menu** hoặc lối tắt ngoài màn hình.
 
 </details>
 
@@ -68,7 +68,7 @@ Ngoài app, bạn cần:
 
 ### Bước 3 - Đăng nhập &amp; mua gói
 
-**Cần tài khoản có gói Flow Music Automation còn hạn, không có bản miễn phí.** Mở app, đăng nhập bằng Google; chưa có gói thì app mở màn hình mua gói. Gói là gói riêng, tách khỏi các gói của G-Labs Studio, tính theo thời hạn và không tự gia hạn:
+**Tạo nhạc cần gói Flow Music Automation còn hạn, không có bản miễn phí.** Mở app, đăng nhập bằng Google. Chưa có gói vẫn xem và thiết lập được mọi thứ (tài khoản, prompt, cài đặt, Webhook API); màn mua gói mở ra khi bấm **Chạy ngay** / **Thêm vào hàng chờ**, hoặc từ nút **Mua gói** trên thanh tiêu đề. Gói là gói riêng, tách khỏi các gói của G-Labs Studio, tính theo thời hạn và không tự gia hạn:
 
 | Thời hạn | Chuyển khoản QR (VietQR) | PayPal / USDT |
 |---|---|---|
@@ -154,6 +154,8 @@ Proxy nhận dạng `host:port`, `user:pass@host:port`, `host:port:user:pass` ho
 
 ### 🌐 Webhook API
 
+![Webhook API](docs/screenshots/09-webhook.png)
+
 Biến app thành máy chủ tự động hoá cục bộ. Tab có ba khối giống G-Labs Studio:
 
 - **Điều khiển Server**: IP (`127.0.0.1` = chỉ máy này, `0.0.0.0` hoặc IP LAN = máy khác trong mạng gọi được), cổng (mặc định `8799`), URL kèm nút sao chép, **Khởi động** / **Dừng Server**, và **Tự động khởi động server khi mở app**.
@@ -208,7 +210,9 @@ Tài khoản Flow Music và hàng chờ chỉ nằm trên máy bạn. Máy chủ
 
 **"Không ghi được vào thư mục lưu"**: ổ đĩa đầy hoặc thư mục không có quyền ghi. Chọn thư mục khác rồi bấm Thử lại.
 
-**Cứ hiện màn mua gói**: gói hết hạn, hoặc tài khoản vừa đăng nhập ở máy khác. Xem ngày hết hạn và gia hạn.
+**Bấm Chạy ngay thì hiện màn mua gói**: gói hết hạn, hoặc tài khoản vừa đăng nhập ở máy khác. Xem ngày hết hạn và gia hạn.
+
+**Gọi webhook bị trả `LICENSE_REQUIRED`**: mở app và đăng nhập tài khoản có gói còn hạn; `/api/health` vẫn trả lời khi chưa có gói.
 
 **Windows chặn ở bảng "Windows protected your PC"**: bấm **More info → Run anyway**.
 

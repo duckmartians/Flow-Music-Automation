@@ -21,7 +21,7 @@
 
 ### Step 1 - Pick the right file for your computer
 
-Open the latest release under **[Releases](https://github.com/duckmartians/Flow-Music-Automation/releases/latest)** and download the file that matches your computer (`<version>` is the version number, e.g. `1.0.0`):
+Open the latest release under **[Releases](https://github.com/duckmartians/Flow-Music-Automation/releases/latest)** and download the file that matches your computer (`<version>` is the version number, e.g. `1.0.1`):
 
 | Your computer | Download | Notes |
 |---|---|---|
@@ -49,7 +49,7 @@ Besides the app, you need:
 
 1. Open the **`FlowMusicAutomation-<version>-win-x64.exe`** you downloaded.
 2. If **"Windows protected your PC"** (SmartScreen) appears: click **More info** → **Run anyway**. *(The app isn't signed with a Microsoft certificate, so Windows warns about it. It is not a virus.)*
-3. Pick the install folder, wait for the installer to finish, then open **Flow Music Automation** from the **Start Menu**.
+3. The installer runs on its own (no admin rights, no folder to pick) and opens the app when it finishes. Later, open **Flow Music Automation** from the **Start Menu** or the desktop shortcut.
 
 </details>
 
@@ -68,7 +68,7 @@ Besides the app, you need:
 
 ### Step 3 - Sign in &amp; get a plan
 
-**You need an account with an active Flow Music Automation plan. There is no free tier.** Open the app and sign in with Google; without a plan, the app shows the purchase screen. The plan is separate from the G-Labs Studio plans, is time-based and never auto-renews:
+**Creating music needs an active Flow Music Automation plan. There is no free tier.** Open the app and sign in with Google. Without a plan you can still look around and set everything up (accounts, prompts, settings, Webhook API); the purchase screen opens when you press **Run now** / **Add to queue**, or from the **Get a plan** button in the title bar. The plan is separate from the G-Labs Studio plans, is time-based and never auto-renews:
 
 | Duration | Bank QR (VietQR) | PayPal / USDT |
 |---|---|---|
@@ -154,6 +154,8 @@ Proxies can be `host:port`, `user:pass@host:port`, `host:port:user:pass` or `htt
 
 ### 🌐 Webhook API
 
+![Webhook API](docs/screenshots/09-webhook.png)
+
 Turn the app into a local automation server. The tab has three blocks, the same as G-Labs Studio:
 
 - **Server Control**: IP (`127.0.0.1` = this computer only, `0.0.0.0` or a LAN IP = other machines on your network), port (default `8799`), URL with a copy button, **Start Server** / **Stop Server**, and **Auto-start server when app launches**.
@@ -208,7 +210,9 @@ Your Flow Music accounts and queue stay on your computer. The licence server is 
 
 **"Can't write to the save folder"**: the disk is full or the folder isn't writable. Choose another folder, then click Retry.
 
-**The purchase screen keeps showing**: your plan has expired, or the account was just signed in on another computer. Check the expiry date and renew.
+**The purchase screen opens when you press Run now**: your plan has expired, or the account was just signed in on another computer. Check the expiry date and renew.
+
+**A webhook call returns `LICENSE_REQUIRED`**: open the app and sign in to an account with an active plan; `/api/health` still answers without one.
 
 **Windows stops at "Windows protected your PC"**: click **More info → Run anyway**.
 
