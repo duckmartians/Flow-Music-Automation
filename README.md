@@ -8,9 +8,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/duckmartians/Flow-Music-Automation/releases/latest"><img alt="Download for Windows" src="https://img.shields.io/badge/Download-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"></a>&nbsp;
-  <a href="https://github.com/duckmartians/Flow-Music-Automation/releases/latest"><img alt="Download for macOS (Apple Silicon)" src="https://img.shields.io/badge/Download-macOS%20Apple%20Silicon-000000?style=for-the-badge&logo=apple&logoColor=white"></a>&nbsp;
-  <a href="https://github.com/duckmartians/Flow-Music-Automation/releases/latest"><img alt="Download for macOS (Intel)" src="https://img.shields.io/badge/Download-macOS%20Intel-555555?style=for-the-badge&logo=apple&logoColor=white"></a>
+  <a href="https://github.com/duckmartians/Flow-Music-Automation/releases/latest/download/Flow-Music-Automation-setup.exe"><img alt="Download for Windows" src="https://img.shields.io/badge/Download-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"></a>&nbsp;
+  <a href="https://github.com/duckmartians/Flow-Music-Automation/releases/latest/download/Flow-Music-Automation-mac-arm64.dmg"><img alt="Download for macOS (Apple Silicon)" src="https://img.shields.io/badge/Download-macOS%20Apple%20Silicon-000000?style=for-the-badge&logo=apple&logoColor=white"></a>&nbsp;
+  <a href="https://github.com/duckmartians/Flow-Music-Automation/releases/latest/download/Flow-Music-Automation-mac-intel.dmg"><img alt="Download for macOS (Intel)" src="https://img.shields.io/badge/Download-macOS%20Intel-555555?style=for-the-badge&logo=apple&logoColor=white"></a>
 </p>
 
 ![Flow Music Automation](docs/screenshots/01-create.png)
@@ -21,13 +21,13 @@
 
 ### Step 1 - Pick the right file for your computer
 
-Open the latest release under **[Releases](https://github.com/duckmartians/Flow-Music-Automation/releases/latest)** and download the file that matches your computer (`<version>` is the version number, e.g. `1.0.1`):
+Open the latest release under **[Releases](https://github.com/duckmartians/Flow-Music-Automation/releases/latest)** and download the file that matches your computer:
 
 | Your computer | Download | Notes |
 |---|---|---|
-| 🪟 **Windows 10 / 11 (64-bit)** | [`FlowMusicAutomation-<version>-win-x64.exe`](https://github.com/duckmartians/Flow-Music-Automation/releases/latest) | Installer |
-| 🍎 **Mac with Apple chip (M1/M2/M3/M4)** | [`FlowMusicAutomation-<version>-mac-arm64.dmg`](https://github.com/duckmartians/Flow-Music-Automation/releases/latest) | Macs from about late 2020 onward |
-| 🍎 **Mac with Intel chip** | [`FlowMusicAutomation-<version>-mac-intel.dmg`](https://github.com/duckmartians/Flow-Music-Automation/releases/latest) | Older Macs (before 2020) |
+| 🪟 **Windows 10 / 11 (64-bit)** | [`Flow-Music-Automation-setup.exe`](https://github.com/duckmartians/Flow-Music-Automation/releases/latest/download/Flow-Music-Automation-setup.exe) | Installer |
+| 🍎 **Mac with Apple chip (M1/M2/M3/M4)** | [`Flow-Music-Automation-mac-arm64.dmg`](https://github.com/duckmartians/Flow-Music-Automation/releases/latest/download/Flow-Music-Automation-mac-arm64.dmg) | Macs from about late 2020 onward |
+| 🍎 **Mac with Intel chip** | [`Flow-Music-Automation-mac-intel.dmg`](https://github.com/duckmartians/Flow-Music-Automation/releases/latest/download/Flow-Music-Automation-mac-intel.dmg) | Older Macs (before 2020) |
 
 **Not sure which chip your Mac has?** Click the  menu at the top left → **About This Mac**:
 - A **Chip** line saying "Apple M1 / M2 / M3…" → get the **arm64** build.
@@ -47,7 +47,7 @@ Besides the app, you need:
 <details open>
 <summary><b>🪟 On Windows</b></summary>
 
-1. Open the **`FlowMusicAutomation-<version>-win-x64.exe`** you downloaded.
+1. Open the **`Flow-Music-Automation-setup.exe`** you downloaded.
 2. If **"Windows protected your PC"** (SmartScreen) appears: click **More info** → **Run anyway**. *(The app isn't signed with a Microsoft certificate, so Windows warns about it. It is not a virus.)*
 3. The installer runs on its own (no admin rights, no folder to pick) and opens the app when it finishes. Later, open **Flow Music Automation** from the **Start Menu** or the desktop shortcut.
 
