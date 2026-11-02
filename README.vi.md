@@ -80,7 +80,7 @@ Ngoài app, bạn cần:
 
 Gói nào cũng mở toàn bộ tính năng. Thanh toán ngay trong app bằng **QR ngân hàng (VietQR)**, **PayPal** hoặc **USDT** (USDT kích hoạt thủ công: trả xong nhắn Telegram [@duckmartians](https://t.me/duckmartians) như màn mua gói hướng dẫn). Một tài khoản dùng **một máy tại một thời điểm**: đăng nhập máy khác thì máy cũ bị đẩy ra. Ô xanh trên thanh tiêu đề hiện ngày hết hạn gói.
 
-App **tự cập nhật**: viên phiên bản trên thanh tiêu đề kiểm tra GitHub Releases, tải bộ cài mới và **kiểm chữ ký số** trước khi dùng; bản không có chữ ký hợp lệ sẽ không bao giờ được cài. Trên Windows app chạy bộ cài mới luôn; trên macOS app mở tệp `.dmg` mới để bạn kéo app vào Applications lần nữa.
+App **tự cập nhật**: viên phiên bản trên thanh tiêu đề kiểm tra GitHub Releases, tải bộ cài mới và **kiểm mã băm SHA-256** với mã GitHub công bố trước khi dùng; tệp tải về bị hỏng hoặc bị sửa sẽ không bao giờ được cài. Trên Windows app chạy bộ cài mới luôn; trên macOS app mở tệp `.dmg` mới để bạn kéo app vào Applications lần nữa.
 
 ---
 

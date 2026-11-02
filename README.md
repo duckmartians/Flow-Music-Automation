@@ -80,7 +80,7 @@ Besides the app, you need:
 
 Every plan unlocks every feature. Pay right inside the app by **bank QR (VietQR)**, **PayPal** or **USDT** (USDT is activated by hand: after paying, message [@duckmartians](https://t.me/duckmartians) on Telegram as the purchase screen explains). One account runs on **one computer at a time**: signing in on another computer signs the old one out. The green badge in the title bar shows when your plan expires.
 
-The app **updates itself**: the version badge in the title bar checks GitHub Releases, downloads the new installer and **verifies its digital signature** before using it; a release without a valid signature is never installed. On Windows the app runs the new installer right away; on macOS it opens the new `.dmg` so you can drag the app into Applications again.
+The app **updates itself**: the version badge in the title bar checks GitHub Releases, downloads the new installer and **checks its SHA-256 checksum** against the one GitHub publishes before using it; a corrupted or altered download is never installed. On Windows the app runs the new installer right away; on macOS it opens the new `.dmg` so you can drag the app into Applications again.
 
 ---
 
