@@ -48,7 +48,7 @@ Besides the app, you need:
 <summary><b>🪟 On Windows</b></summary>
 
 1. Open the **`Flow-Music-Automation-setup.exe`** you downloaded.
-2. If **"Windows protected your PC"** (SmartScreen) appears: click **More info** → **Run anyway**. *(The app isn't signed with a Microsoft certificate, so Windows warns about it. It is not a virus.)*
+2. The installer is digitally signed by **DUCKMARTIANS**. If **"Windows protected your PC"** (SmartScreen) still appears for a brand-new version, check that the publisher shows DUCKMARTIANS, then click **More info** → **Run anyway**.
 3. The installer runs on its own (no admin rights, no folder to pick) and opens the app when it finishes. Later, open **Flow Music Automation** from the **Start Menu** or the desktop shortcut.
 
 </details>
@@ -214,7 +214,7 @@ Your Flow Music accounts and queue stay on your computer. The licence server is 
 
 **A webhook call returns `LICENSE_REQUIRED`**: open the app and sign in to an account with an active plan; `/api/health` still answers without one.
 
-**Windows stops at "Windows protected your PC"**: click **More info → Run anyway**.
+**Windows shows "Windows protected your PC"** - the installer is digitally signed by DUCKMARTIANS, but SmartScreen can still warn about a version that was just released. Check that the publisher is DUCKMARTIANS, then click **More info → Run anyway**.
 
 **macOS says the app is damaged / won't open**: the app isn't signed with an Apple Developer ID. Right-click → **Open** the first time, or run `xattr -dr com.apple.quarantine "/Applications/Flow Music Automation.app"`.
 
