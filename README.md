@@ -72,9 +72,9 @@ Besides the app, you need:
 
 | Duration | Bank QR (VietQR) | PayPal / USDT |
 |---|---|---|
-| 1 month | 50,000₫ | $3 |
-| 6 months | 250,000₫ | $15 |
-| 1 year | 500,000₫ | $30 |
+| 1 month | 70,000₫ | $4 |
+| 6 months | 350,000₫ | $20 |
+| 1 year | 700,000₫ | $40 |
 
 ![Purchase screen](docs/screenshots/06-buy.png)
 

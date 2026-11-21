@@ -72,9 +72,9 @@ Ngoài app, bạn cần:
 
 | Thời hạn | Chuyển khoản QR (VietQR) | PayPal / USDT |
 |---|---|---|
-| 1 tháng | 50.000₫ | $3 |
-| 6 tháng | 250.000₫ | $15 |
-| 1 năm | 500.000₫ | $30 |
+| 1 tháng | 70.000₫ | $4 |
+| 6 tháng | 350.000₫ | $20 |
+| 1 năm | 700.000₫ | $40 |
 
 ![Mua gói](docs/screenshots/06-buy.png)
 
